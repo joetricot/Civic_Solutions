@@ -21,8 +21,7 @@ As a BID or neighborhood organization, we'd like to stay on top of neighborhood 
 ### Pseudocode
 - install necessary npm packages
 - create necessary folders and get express app running
+- set up user database
+- do authorization routes and user models/routes
 - create landing page using html/ejs/CSS
-- create database for user authentication
-- add sign-in and create pages
-- create and design necessary packages
-- 
+- create and design necessary pages
