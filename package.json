@@ -1,0 +1,27 @@
+{
+  "name": "civic_solutions_app",
+  "version": "1.0.0",
+  "description": "A focal point of a well run civic community is its ability to respond to constituent requests in a timely and effective manner. But what if those very same constituents aren't able to relay and prioritize their concerns to city hall?",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joetricot/Civic_Solutions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joetricot/Civic_Solutions/issues"
+  },
+  "homepage": "https://github.com/joetricot/Civic_Solutions#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "morgan": "^1.8.2",
+    "pg-promise": "^6.3.6"
+  }
+}
