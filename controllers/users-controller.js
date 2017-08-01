@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const usersController = {};
 
 usersController.index = (req, res) => {
-  res.json({
+  res.render('user/user-index', {
     user: req.user,
     data: 'user profile would go here',
   });
@@ -17,7 +17,7 @@ usersController.create = (req, res, next) => {
     email: req.body.email,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
-    password: hash,
+    password_digest: hash,
   }).then(user => {
     req.login(user, (err) => {
       if (err) return next(err);

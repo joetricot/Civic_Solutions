@@ -8,6 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 
 const app = express();
+
 require('dotenv').config();
 
 app.use(logger('dev'));
@@ -20,13 +21,13 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
  }));
- app.use(passport.initialize());
- app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
- app.use(express.static('public'));
+app.use(express.static('public'));
 
- app.set('view engine', 'ejs');
- app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 
 const PORT = process.env.PORT || 3000;
@@ -34,16 +35,23 @@ app.listen(PORT, () => {
   console.log(`Civic Solutions is listening on port ${PORT}`)
 });
 
-app.get('/',(req,res)=>{
-  res.send('Hello world!')
+app.get('/', (req, res) => {
+  res.render('index', {
+    message: 'Hello world!',
+    documentTitle: 'by Joe Tricot',
+  });
 });
 
+
+//
+// const csRoutes = require('./routes/cs-routes');
+// app.use('/cs', csRoutes);
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
 
-app.use('*',(req,res)=>{
+app.use('*', (req,res)=>{
   res.status(404).json({
     message:'Invalid route!',
   });

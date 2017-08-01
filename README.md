@@ -1,6 +1,6 @@
 # Civic_Solutions
 
-A focal point of a well run civic community is its ability to respond to constituent requests in a timely and effective manner. But what if those very same constituents aren't able to relay and prioritize their concerns to city hall?
+A focal point of a well run civic community is its ability to respond to constituent requests in a timely and effective manner. However, those very same constituents aren't able to relay and prioritize their concerns to city hall.
 
 311 tools in NYC are not user friendly and users cannot access a history of complaints made in a personal portal - rather they must dig into their email to locate a long confirmation number and input that. In addition, local neighborhood organizations, which are well equipped to tackle civic issues,  are not automatically kept in the loop whenever a request is made.
 
@@ -25,3 +25,8 @@ As a BID or neighborhood organization, we'd like to stay on top of neighborhood 
 - do authorization routes and user models/routes
 - create landing page using html/ejs/CSS
 - create and design necessary pages
+- create database for submission form
+- create submission form
+-
+## future opportunities
+- upload photo of the issue
