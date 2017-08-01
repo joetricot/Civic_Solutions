@@ -11,5 +11,6 @@ csRouter.get('/new', authHelpers.loginRequired, (req,res)=>{
   res.render('issues/issue-add')
 });
 
+csRouter.get('/:id', authHelpers.loginRequired, csController.show);
 
 module.exports = csRouter;

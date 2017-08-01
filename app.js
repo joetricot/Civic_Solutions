@@ -38,7 +38,6 @@ app.listen(PORT, () => {
 app.get('/', (req, res) => {
   res.render('index', {
     message: 'Hello world!',
-    documentTitle: 'by Joe Tricot',
   });
 });
 

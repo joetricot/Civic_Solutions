@@ -14,6 +14,21 @@ csController.index = (req, res) => {
     });
 };
 
+csController.show = (req,res)=>{
+  cs.findById(req.params.id)
+    .then(cd=>{
+      res.render('issues/issue-single', {
+        cs: cs,
+      })
+    }).catch(err=>{
+      console.log(err);
+      res.status(500).json({err});
+    });
+};
+
+
+
+
 csController.create = (req, res) =>{
   cs.create({
     description: req.body.description,

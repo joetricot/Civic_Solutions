@@ -18,4 +18,11 @@ issue.create = (issue) => {
     `, [issue.description, issue.address, issue.user_id]);
 };
 
+issue.findById=(id)=>{
+  return db.oneOrNone(`
+    SELECT * FROM issues
+    WHERE id = $1
+    `, [id]);
+};
+
 module.exports = issue;
