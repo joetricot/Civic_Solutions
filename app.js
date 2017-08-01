@@ -43,9 +43,9 @@ app.get('/', (req, res) => {
 });
 
 
-//
-// const csRoutes = require('./routes/cs-routes');
-// app.use('/cs', csRoutes);
+
+const csRoutes = require('./routes/cs-routes');
+app.use('/cs', csRoutes);
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');
