@@ -1,6 +1,9 @@
 <% include ./partials/boilerplate %>
 
-<a href='/auth/login'>Login</a>
-<a href='/auth/register'>Register</a>
+<% data.forEach(issue => { %>
+  <h3><%= issue.description %></h3>
+  <p><%= issue.address %></p>
+
+<% }) %>
 
 <% include ./partials/end %>
