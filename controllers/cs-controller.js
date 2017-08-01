@@ -1,4 +1,4 @@
-const cs = require('../models/cs');
+const cs = require('../models/issue');
 
 const csController = {};
 
