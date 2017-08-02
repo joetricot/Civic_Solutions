@@ -2,14 +2,16 @@ const db = require('../db/config');
 
 const User = {};
 
-User.findByUserName = (email) => {
+User.findByUserName = email => {
+  console.log('in findUserName');
   return db.oneOrNone(`
     SELECT * FROM users
     WHERE email = $1
   `, [email]);
 };
 
-User.create = (user) => {
+User.create = user => {
+  console.log('in create function');
   return db.one(`
     INSERT INTO users
     (email, first_name, last_name, password_digest)
@@ -18,4 +20,10 @@ User.create = (user) => {
   `, [user.email, user.first_name, user.last_name, user.password_digest]);
 };
 
+// User.findUserName = id => {
+//   return db.manyOrNone(`
+//     SELECT * FROM users
+//     WHERE email = $1
+//     `, [id]);
+// };
 module.exports = User;

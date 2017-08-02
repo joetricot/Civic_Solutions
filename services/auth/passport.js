@@ -7,6 +7,7 @@ module.exports = () => {
   });
 
   passport.deserializeUser((email, done) => {
+    console.log('IN AUTH FOLDER');
     User.findByUserName(email)
       .then(user => {
         done(null, user);

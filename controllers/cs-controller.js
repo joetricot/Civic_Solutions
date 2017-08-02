@@ -3,10 +3,10 @@ const cs = require('../models/issue');
 const csController = {};
 
 csController.index = (req, res) => {
-  cs.findAll()
+  cs.findAll(req.user.id)
     .then(cs => {
       res.render('issues/issue-index', {
-        data: issues,
+        data: cs,
       });
     }).catch(err => {
       console.log(err);
@@ -16,18 +16,15 @@ csController.index = (req, res) => {
 
 csController.show = (req,res)=>{
   cs.findById(req.params.id)
-    .then(cd=>{
+    .then(cs=>{
       res.render('issues/issue-single', {
         cs: cs,
       })
     }).catch(err=>{
       console.log(err);
-      res.status(500).json({err});
+      res.status(500).json({ err });
     });
 };
-
-
-
 
 csController.create = (req, res) =>{
   cs.create({
@@ -42,5 +39,40 @@ csController.create = (req, res) =>{
     res.status(500).json({err});
   });
 };
+
+csController.edit=(req,res)=>{
+  cs.findById(req.params.id)
+    .then(cs=>{
+      res.render('issues/issue-single-edit', {
+        cs: cs,
+      })
+    }).catch(err=>{
+    console.log(err);
+    res.status(500).json({ err });
+  });
+}
+
+csController.update=(req,res)=>{
+  cs.update({
+    description: req.body.description,
+    address: req.body.address,
+    user_id: req.user.id,
+  }, req.params.id).then(cs=>{
+      res.redirect('/');
+  }).catch(err=>{
+    console.log(err);
+    res.status(500).json({ err })
+  });
+}
+
+csController.delete=(req,res)=>{
+  cs.destroy(req.params.id)
+    .then(()=>{
+      res.redirect('/');
+    }).catch(err=>{
+      console.log(err);
+      res.status(500).json({ err })
+    });
+}
 
 module.exports = csController;

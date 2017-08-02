@@ -10,5 +10,9 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS issues (
   id SERIAL PRIMARY KEY,
   description TEXT,
-  address TEXT
+  address TEXT,
+  user_id INT REFERENCES users(id)
 );
+
+ALTER TABLE issues
+ADD COLUMN user_id INTEGER REFERENCES users(id);

@@ -41,10 +41,16 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/new',(req, res)=>{
+  res.render('issues/issue-add',{
+    message:'yaaaaaaay',
+  })
+})
+
 
 
 const csRoutes = require('./routes/cs-routes');
-app.use('/cs', csRoutes);
+app.use('/issues', csRoutes);
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');
