@@ -1,13 +1,13 @@
 <% include ../partials/boilerplate %>
 
-<p>Will have 311 info</p>
-
 <% data.forEach((nyc) => { %>
-    <p><%= nyc.complaint_type %></p>
-    <p><%= nyc.descriptor %></p>
-    <p><%= nyc.incident_address %></p>
-    <p><%= nyc.agency_name %></p>
+    <p><b>Complaint Type</b>: <%= nyc.complaint_type %></p>
+    <p><b>Descriptor</b>: <%= nyc.descriptor %></p>
+    <p><b>Location</b>: <%= nyc.incident_address %> ,  <%=nyc.borough %> ,  <%= nyc.incident_zip %></p>
+    <p><b>Agency in Charge</b>: <%= nyc.agency_name %></p>
+    <p><b>Date Created</b>:<%= nyc.created_date %></p>
+    <p><b>Current Status</b>: <%= nyc.status %></p>
+    <br><br>
   <% }) %>
-
 
 <% include ../partials/end %>

@@ -7,7 +7,6 @@ function getNyc(req, res, next) {
       return fetchRes.json();
       next();
     }).then(jsonRes => {
-      console.log(jsonRes[0].city);
       res.locals.nyc = jsonRes;
       next();
     }).catch(err => {
