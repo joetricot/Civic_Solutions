@@ -36,18 +36,8 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res) => {
-  res.render('index', {
-    message: 'Hello world!',
-  });
+  res.render('index');
 });
-
-app.get('/new',(req, res)=>{
-  res.render('issues/issue-add',{
-    message:'yaaaaaaay',
-  })
-})
-
-
 
 const csRoutes = require('./routes/cs-routes');
 app.use('/issues', csRoutes);

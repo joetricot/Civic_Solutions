@@ -2,11 +2,10 @@ const db = require('../db/config');
 
 const issue = {};
 
-issue.findAll= (id) => {
+issue.findAll= () => {
   return db.query(`
     SELECT * FROM issues
-    WHERE user_id = $1
-    `, [id]);
+    `);
 };
 
 issue.create = (issue) => {

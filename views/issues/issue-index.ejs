@@ -1,19 +1,14 @@
 <% include ../partials/boilerplate %>
 
-<% data.forEach(issue => { <%
-  <h3><%= issue.description %></h3>
-  <p><%= issue.address %></p>
-%> }) %>
 
-<a href='/todos/<%= issue.id %>'>Link</a>
+
+<% data.forEach(issue => { %>
+  <h3><%= issue.description %></h3>
+  <a href="/issues/<%= issue.id%>">See issue details</a>
+<% }); %>
+
+
+<a href="/issues/add">Generate new request</a>
+
 
 <% include ../partials/end %>
-
-<!-- <% data.forEach(issue => { %>
-  <h3><%= issue.description %></h3>
-  <p><%= issue.address %></p>
-
-
-<a href="/issues/<%= issue.id %>">Link</a>
-
-<% }) %> -->

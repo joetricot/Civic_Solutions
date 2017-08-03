@@ -33,7 +33,7 @@ csController.create = (req, res) =>{
     user_id: req.user.id,
   }).then(cs => {
     console.log(cs);
-    res.redirect('/');
+    res.redirect('/issues');
   }).catch(err=>{
     console.log(err);
     res.status(500).json({err});
@@ -58,7 +58,7 @@ csController.update=(req,res)=>{
     address: req.body.address,
     user_id: req.user.id,
   }, req.params.id).then(cs=>{
-      res.redirect('/');
+      res.redirect('/issues');
   }).catch(err=>{
     console.log(err);
     res.status(500).json({ err })
@@ -68,7 +68,7 @@ csController.update=(req,res)=>{
 csController.delete=(req,res)=>{
   cs.destroy(req.params.id)
     .then(()=>{
-      res.redirect('/');
+      res.redirect('/issues');
     }).catch(err=>{
       console.log(err);
       res.status(500).json({ err })

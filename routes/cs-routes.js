@@ -8,8 +8,10 @@ const csController = require('../controllers/cs-controller');
 csRouter.get('/', authHelpers.loginRequired, csController.index);
 csRouter.post('/', authHelpers.loginRequired, csController.create);
 
-csRouter.get('/new', authHelpers.loginRequired, (req,res)=>{
-  res.render('issues/issue-add')
+csRouter.get('/add', authHelpers.loginRequired, (req,res)=>{
+  res.render('issues/issue-add', {
+    currentPage: 'add',
+  });
 });
 
 csRouter.get('/:id', authHelpers.loginRequired, csController.show);
