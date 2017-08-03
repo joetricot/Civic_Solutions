@@ -1,11 +1,14 @@
 <% include ../partials/boilerplate %>
-<p>HI</p>
 
+<h1>Your Report History! </h1>
 
 <% data.forEach(issue => { %>
   <h3><%= issue.description %></h3>
   <a href="/issues/<%= issue.id%>">See issue details</a>
-
+  <a href='/issues/<%= issue.id %>/edit'>Edit it!</a>
+<form method='POST' action='/issues/<%= issue.id %>?_method=DELETE'>
+    <input type='submit' value='Delete it!' />
+          </form>
 <% }); %>
-
+<a href="/issues/add">Generate new request</a>
 <% include ../partials/end %>
