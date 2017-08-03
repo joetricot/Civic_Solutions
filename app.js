@@ -45,6 +45,8 @@ const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
+const nycRoutes = require('./routes/nyc-routes');
+app.use('/nyc', nycRoutes);
 
 app.use('*', (req,res)=>{
   res.status(404).json({
