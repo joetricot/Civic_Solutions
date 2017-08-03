@@ -20,10 +20,5 @@ User.create = user => {
   `, [user.email, user.first_name, user.last_name, user.password_digest]);
 };
 
-// User.findUserName = id => {
-//   return db.manyOrNone(`
-//     SELECT * FROM users
-//     WHERE email = $1
-//     `, [id]);
-// };
+
 module.exports = User;
