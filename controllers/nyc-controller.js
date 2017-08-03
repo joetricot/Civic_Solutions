@@ -5,3 +5,5 @@ nycController.index = (req, res)=>{
     nyc: res.locals.nyc,
   });
 };
+
+module.exports = nycController;

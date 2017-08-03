@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS users (
   email VARCHAR (255) UNIQUE NOT NULL,
   first_name VARCHAR (255),
   last_name VARCHAR (255),
-  password_digest TEXT
+  password_digest TEXT NOT NULL
 );
 CREATE TABLE IF NOT EXISTS issues (
   id SERIAL PRIMARY KEY,

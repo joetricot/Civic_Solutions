@@ -6,7 +6,7 @@ csController.index = (req, res) => {
   cs.findAll(req.user.id)
     .then(cs => {
       res.render('issues/issue-index', {
-        data: issues,
+        data: cs,
       });
     }).catch(err => {
       console.log(err);
@@ -18,7 +18,7 @@ csController.show = (req,res)=>{
   cs.findById(req.params.id)
     .then(cs=>{
       res.render('issues/issue-single', {
-        data: issue,
+        cs: cs,
       })
     }).catch(err=>{
       console.log(err);
@@ -44,7 +44,7 @@ csController.edit=(req,res)=>{
   cs.findById(req.params.id)
     .then(cs=>{
       res.render('issues/issue-single-edit', {
-        data: issue,
+        data: cs,
       })
     }).catch(err=>{
     console.log(err);
