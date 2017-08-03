@@ -8,11 +8,7 @@ function getNyc(req, res, next) {
       next();
     }).then(jsonRes => {
       console.log(jsonRes[0].city);
-      res.locals.complaint = jsonRes[0].complaint_type;
-      res.locals.description = jsonRes[0].descriptor;
-      res.locals.address = jsonRes[0].address;
-      res.locals.agency_name = jsonRes[0].agency_name;
-      console.log(jsonRes[0].descriptor);
+      res.locals.nyc = jsonRes;
       next();
     }).catch(err => {
       console.log(err);

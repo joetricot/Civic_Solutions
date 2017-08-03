@@ -2,6 +2,12 @@
 
 <p>Will have 311 info</p>
 
+<% data.forEach((nyc) => { %>
+    <p><%= nyc.complaint_type %></p>
+    <p><%= nyc.descriptor %></p>
+    <p><%= nyc.incident_address %></p>
+    <p><%= nyc.agency_name %></p>
+  <% }) %>
 
 
 <% include ../partials/end %>
