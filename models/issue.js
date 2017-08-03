@@ -8,6 +8,15 @@ issue.findAll= () => {
     `);
 };
 
+issue.findByUserId= (id) => {
+  return db.query(`
+    SELECT * FROM issues
+    WHERE user_id = $1
+    `, [id]);
+};
+
+
+
 issue.create = (issue) => {
   return db.one(`
     INSERT INTO issues

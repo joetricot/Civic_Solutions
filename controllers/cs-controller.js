@@ -3,7 +3,7 @@ const cs = require('../models/issue');
 const csController = {};
 
 csController.index = (req, res) => {
-  cs.findAll(req.user.id)
+  cs.findByUserId(req.user.id)
     .then(cs => {
       res.render('issues/issue-index', {
         data: cs,

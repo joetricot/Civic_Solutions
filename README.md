@@ -19,11 +19,11 @@ As an elected official for this district, I'd like my office and partnership org
 As a BID or neighborhood organization, we'd like to stay on top of neighborhood concerns which helps us better understand the community's needs and helps us address them with city hall and the concerned party.
 
 ### Pseudocode
-- install necessary npm packages
-- create necessary folders and get express app running
-- set up user database
-- do authorization routes and user models/routes
-- create landing page using html/ejs/CSS
+<!-- - install necessary npm packages -->
+<!-- - create necessary folders and get express app running -->
+<!-- - set up user database -->
+<!-- - do authorization routes and user models/routes -->
+<!-- - create landing page  -->
 - create and design necessary pages
 - create database for submission form
 - create submission form

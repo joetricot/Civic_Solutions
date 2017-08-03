@@ -1,9 +1,9 @@
 const nycController = {};
 
 nycController.index = (req, res)=>{
-  nycController('nyc/nyc-index', {
+  res.render('nyc/nyc-index', {
     nyc: res.locals.nyc,
   });
-};
+}
 
 module.exports = nycController;
