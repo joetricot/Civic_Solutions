@@ -2,7 +2,10 @@ body {
   margin: 0;
   text-align: center;
 }
-
 .login {
+  padding: 10px;
+}
+
+.mainHome {
   font-size: 2em;
 }

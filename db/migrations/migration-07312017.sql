@@ -1,4 +1,4 @@
-\c civic_solutions
+-- \c civic_solutions
 
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
