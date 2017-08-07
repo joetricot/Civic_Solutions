@@ -1,6 +1,8 @@
 body {
   margin: 0;
   text-align: center;
+  background: url('bk.jpg') no-repeat center center fixed;
+  font-size: 1.5em;
 }
 .login {
   padding: 10px;
@@ -8,4 +10,20 @@ body {
 
 .mainHome {
   font-size: 2em;
+}
+
+.homeBoilerplate {
+  background: url('nyc.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.homePage {
+  font-size: 1.5em;
+}
+
+.loginBoilerplate {
+  background: url('bk.jpg') no-repeat center center fixed;
 }
